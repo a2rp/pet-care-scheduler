@@ -1,0 +1,88 @@
+.petCareScheduler {
+    .welcome { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 22px 0 24px; }
+    .label { color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: .17em; }
+    .welcome h1 { margin-top: 10px; font-size: clamp(42px, 5vw, 61px); font-weight: 760; line-height: 1; letter-spacing: -.06em; }
+    .description { margin-top: 13px; color: var(--muted); font-size: 14px; }
+    .todayCard { display: grid; grid-template-columns: 38px 1fr; align-items: center; gap: 4px 11px; min-width: 240px; padding: 16px; border: 1px solid #dbe4f1; border-radius: 15px; background: #e6edf8; }
+    .todayCard > svg { grid-row: span 2; width: 38px; height: 38px; padding: 9px; border-radius: 12px; color: #fff; background: var(--accent); }
+    .todayCard div { display: grid; line-height: 1.25; }
+    .todayCard div span { color: #75839b; font-size: 9px; font-weight: 800; letter-spacing: .12em; }
+    .todayCard strong { font-size: 13px; }
+    .todayCard > p { grid-column: 2; color: var(--muted); font-size: 10px; }
+    .petSection { padding: 19px; border: 1px solid var(--line); border-radius: 18px; background: var(--card); }
+    .sectionHeading, .scheduleHeading { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .sectionHeading h2, .scheduleHeading h2 { font-size: 20px; font-weight: 750; }
+    .sectionHeading p, .scheduleHeading p { color: var(--muted); font-size: 11px; }
+    .sectionHeading > span { color: var(--muted); font-size: 10px; }
+    .petCards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; margin-top: 14px; }
+    .petCard, .selectedPet, .allPets { display: flex; min-width: 0; align-items: center; gap: 9px; padding: 10px; border: 1px solid var(--line); border-radius: 12px; text-align: left; background: #fff; }
+    .selectedPet { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); background: #f8f9fb; }
+    .petMark, .allMark { width: 39px; height: 39px; flex: 0 0 39px; display: grid; place-items: center; border-radius: 13px; color: #26385a; background: #e4edf8; font-weight: 800; }
+    .petColor1 { color: #855d2e; background: #fbefd9; }
+    .petColor2 { color: #4d715f; background: #e3f0e6; }
+    .allMark { color: #fff; background: #33486c; font-size: 20px; }
+    .petCard > span:nth-child(2), .selectedPet > span:nth-child(2), .allPets > span:nth-child(2) { display: grid; min-width: 0; }
+    .petCard strong, .allPets strong { font-size: 12px; }
+    .petCard small, .allPets small { overflow: hidden; color: var(--muted); font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+    .petCard i { margin-left: auto; color: var(--muted); font-size: 9px; font-style: normal; }
+    .scheduleLayout { display: grid; grid-template-columns: minmax(0, 1fr) 280px; align-items: start; gap: 14px; margin-top: 14px; }
+    .schedulePanel, .petFormPanel { border: 1px solid var(--line); border-radius: 17px; background: var(--card); }
+    .schedulePanel { padding: 20px; }
+    .tabs { display: flex; gap: 4px; padding: 4px; border-radius: 9px; background: #f0f3f8; }
+    .tabs button { min-height: 30px; padding: 0 10px; border: 0; border-radius: 7px; color: var(--muted); background: transparent; font-size: 10px; font-weight: 700; }
+    .tabs .activeTab { color: #fff; background: #30466a; }
+    .taskList { margin-top: 11px; }
+    .taskRow, .doneTask { display: grid; grid-template-columns: 28px minmax(0, 1fr) 92px 28px; align-items: center; gap: 10px; min-height: 64px; border-bottom: 1px solid #edf0f4; }
+    .taskCheck { width: 23px; height: 23px; display: grid; place-items: center; border: 1.5px solid #cdd8e8; border-radius: 50%; color: #fff; background: transparent; }
+    .taskCheck[aria-pressed="true"] { border-color: #578365; background: #578365; }
+    .taskCheck svg { width: 14px; }
+    .taskCopy { display: grid; }
+    .taskCopy span { color: var(--accent); font-size: 9px; font-weight: 700; }
+    .taskCopy strong { font-size: 12px; }
+    .taskTime { display: grid; text-align: right; }
+    .taskTime strong { font-size: 10px; }
+    .taskTime small { color: var(--muted); font-size: 9px; }
+    .deleteButton { display: grid; width: 27px; height: 27px; place-items: center; border: 0; border-radius: 7px; color: #8b95a5; background: transparent; }
+    .deleteButton:hover { box-shadow: 0 2px 8px #28395718; color: var(--accent); }
+    .deleteButton svg { width: 14px; }
+    .doneTask .taskCopy strong { color: #8490a1; text-decoration: line-through; }
+    .emptyState { padding: 25px; color: var(--muted); font-size: 12px; text-align: center; }
+    .taskForm { display: grid; grid-template-columns: 1fr 1.5fr 1fr 1fr .8fr auto; align-items: end; gap: 8px; margin-top: 18px; padding: 14px; border-radius: 12px; background: #f3f6fa; }
+    .taskForm h3 { grid-column: 1 / -1; font-size: 12px; }
+    .taskForm label, .petFormPanel label { display: grid; gap: 4px; color: var(--muted); font-size: 9px; font-weight: 700; }
+    .taskForm input, .taskForm select, .petFormPanel input, .petFormPanel select { width: 100%; min-width: 0; min-height: 34px; padding: 0 7px; border: 1px solid var(--line); border-radius: 7px; outline-color: var(--accent); background: #fff; font-size: 10px; }
+    .addButton { display: flex; min-height: 34px; align-items: center; gap: 4px; padding: 0 9px; border: 0; border-radius: 7px; color: #fff; background: #30466a; font-size: 10px; font-weight: 700; }
+    .addButton svg, .petAddButton svg { width: 13px; }
+    .addButton:disabled { opacity: .5; }
+    .petFormPanel { padding: 20px; background: #fff8e9; }
+    .paw { display: grid; width: 40px; height: 40px; place-items: center; border-radius: 13px; color: #fff; background: var(--accent); font-size: 22px; }
+    .petFormPanel h2 { margin-top: 13px; font-size: 18px; font-weight: 750; }
+    .petFormPanel > p { margin-top: 5px; color: var(--muted); font-size: 11px; }
+    .petFormPanel form { display: grid; gap: 10px; margin-top: 17px; }
+    .petAddButton { display: flex; min-height: 36px; align-items: center; justify-content: center; gap: 5px; border: 0; border-radius: 8px; color: #fff; background: #30466a; font-size: 11px; font-weight: 700; }
+    .petFormPanel > small { display: block; margin-top: 13px; color: var(--muted); font-size: 9px; }
+    @media (max-width: 1000px) {
+        .scheduleLayout { grid-template-columns: 1fr; }
+        .petCards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .petFormPanel { display: grid; grid-template-columns: 50px 1fr; column-gap: 12px; }
+        .petFormPanel .paw { grid-row: span 2; }
+        .petFormPanel h2 { margin-top: 2px; }
+        .petFormPanel > p { grid-column: 2; }
+        .petFormPanel form, .petFormPanel > small { grid-column: 1 / -1; }
+        .petFormPanel form { grid-template-columns: repeat(3, 1fr) auto; align-items: end; }
+    }
+    @media (max-width: 650px) {
+        .welcome { align-items: flex-start; flex-direction: column; }
+        .todayCard { width: 100%; }
+        .petSection { padding: 14px; }
+        .petCards { grid-template-columns: 1fr; }
+        .schedulePanel { padding: 13px; }
+        .scheduleHeading { align-items: flex-start; flex-direction: column; }
+        .taskRow, .doneTask { grid-template-columns: 25px minmax(0, 1fr) 75px 25px; gap: 6px; }
+        .taskForm { grid-template-columns: 1fr 1fr; }
+        .taskForm h3, .taskForm label:first-of-type { grid-column: 1 / -1; }
+        .addButton { justify-content: center; }
+        .petFormPanel form { grid-template-columns: 1fr 1fr; }
+        .petFormPanel form label:first-of-type { grid-column: 1 / -1; }
+    }
+}
